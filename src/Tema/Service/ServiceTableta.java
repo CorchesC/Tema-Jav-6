@@ -26,7 +26,7 @@ public class ServiceTableta {
 
     }
 
-    public void afisareTelefoane() {
+    public void afisareTablete() {
         for (int i =0; i < tablete.size(); i++) {
             System.out.println(tablete.get(i).descriere());
         }
