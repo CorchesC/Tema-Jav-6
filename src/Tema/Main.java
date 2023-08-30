@@ -2,42 +2,44 @@ package Tema;
 
 import Tema.Models.Scooter;
 import Tema.Service.*;
+import Tema.View.*;
 
 import javax.naming.directory.SchemaViolationException;
+import javax.swing.text.View;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ServicePasare servicePasare = new ServicePasare();
-        servicePasare.afisarePasari();
+        TelefonView view1 = new TelefonView();
+        view1.play();
 
-        ServiceMotocicleta serviceMotocicleta = new ServiceMotocicleta();
-        serviceMotocicleta.afisareMotociclete();
+        TabletaView view2 = new TabletaView();
+        view2.play();
 
-        ServiceTelefon serviceTelefon = new ServiceTelefon();
-        serviceTelefon.afisareTelefoane();
+        LaptopView view3 = new LaptopView();
+        view3.play();
 
-        ServiceTableta serviceTableta = new ServiceTableta();
-        serviceTableta.afisareTelefoane();
+        MotociletaView view4 = new MotociletaView();
+        view4.play();
 
-        ServiceLaptop serviceLaptop = new ServiceLaptop();
-        serviceLaptop.afisareLaptopuri();
+        BicicletaView view5 = new BicicletaView();
+        view5.play();
 
-        ServiceBicicleta serviceBicicleta = new ServiceBicicleta();
-        serviceBicicleta.afisareBiciclete();
+        ScooterView view6 = new ScooterView();
+        view6.play();
 
-        ServiceScooter serviceScooter = new ServiceScooter();
-        serviceScooter.afisareScootere();
+        PasareView view7 = new PasareView();
+        view7.play();
 
-        ServiceCuptor serviceCuptor = new ServiceCuptor();
-        serviceCuptor.afisareCuptoare();
+        HotaView view8 = new HotaView();
+        view8.play();
 
-        ServiceMicrounde serviceMicrounde = new ServiceMicrounde();
-        serviceMicrounde.afisareMicrounde();
+        CuptorView view9 = new CuptorView();
+        view9.play();
 
-        ServiceHota serviceHota = new ServiceHota();
-        serviceHota.afisareHote();
+        MicroundeView view10 = new MicroundeView();
+        view10.play();
 
 
     }
