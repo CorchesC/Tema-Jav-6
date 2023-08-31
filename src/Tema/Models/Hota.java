@@ -20,6 +20,11 @@ public class Hota {
 
     }
 
+    public Hota(String model, String brand) {
+        this.model = model;
+        this.brand = brand;
+    }
+
 
 
     public void setModel(String model) {

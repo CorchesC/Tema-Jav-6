@@ -20,6 +20,11 @@ public class Pasare {
             this.zburatoare = zburatoare;
         }
 
+        public Pasare(String specie, int varsta) {
+            this.specie = specie;
+            this.varsta = varsta;
+        }
+
 
 
         public void setSpecie(String specie) {

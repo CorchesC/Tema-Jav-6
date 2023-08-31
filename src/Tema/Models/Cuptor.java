@@ -20,6 +20,10 @@ public class Cuptor {
 
     }
 
+    public Cuptor(String model, String brand) {
+        this.model = model;
+        this.brand = brand;
+    }
 
 
     public void setModel(String model) {

@@ -1,5 +1,6 @@
 package Tema.Service;
 
+import Tema.Models.Motocicleta;
 import Tema.Models.Tableta;
 import Tema.Models.Telefon;
 
@@ -30,5 +31,45 @@ public class ServiceTableta {
         for (int i =0; i < tablete.size(); i++) {
             System.out.println(tablete.get(i).descriere());
         }
+    }
+
+    public void  addTableta(Tableta tableta){
+        this.tablete.add(tableta);
+    }
+
+    public int pozitietableta(Tableta tableta) {
+        for (int i =0; i < tablete.size(); i++) {
+            if (tablete.get(i).getBrand().equals(tableta.getBrand()) == true && tablete.get(i).getModel().equals(tableta.getModel()) == true) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public void removeTableta(int poz) {
+        tablete.remove(poz);
+    }
+
+    public Tableta tabletaMaxSpatiu() {
+        int max =-1;
+        Tableta tabMax = this.tablete.get(0);
+        for(int i = 0; i < tablete.size();i++) {
+            if (tablete.get(i).getSpatiuStocare() > max) {
+                max = tablete.get(i).getSpatiuStocare();
+                tabMax = tablete.get(i);
+            }
+        }
+        return tabMax;
+    }
+
+    public Tableta tabletaMinSpatiu() {
+        int min = 99999999;
+        Tableta tabMin = this.tablete.get(0);
+        for(int i = 0; i < tablete.size();i++) {
+            if (tablete.get(i).getSpatiuStocare() < min) {
+                min = tablete.get(i).getSpatiuStocare();
+                tabMin = tablete.get(i);
+            }
+        }
+        return tabMin;
     }
 }

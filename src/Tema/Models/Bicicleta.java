@@ -17,7 +17,10 @@ public class Bicicleta {
         this.pret = pret;
     }
 
-
+    public Bicicleta(String model, String brand) {
+        this.model = model;
+        this.brand = brand;
+    }
 
     public void setModel(String model) {
         this.model = model;

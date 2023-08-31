@@ -1,6 +1,7 @@
 package Tema.Service;
 
 import Tema.Models.Cuptor;
+import Tema.Models.Microunde;
 
 import java.util.ArrayList;
 
@@ -27,4 +28,45 @@ public class ServiceCuptor {
             System.out.println(cuptoare.get(i).descriere());
         }
     }
+
+    public void  addCuptor(Cuptor cuptor){
+        this.cuptoare.add(cuptor);
+    }
+
+    public int pozitieCuptor(Cuptor cuptor) {
+        for (int i =0; i < cuptoare.size(); i++) {
+            if (cuptoare.get(i).getBrand().equals(cuptor.getBrand()) == true && cuptoare.get(i).getModel().equals(cuptor.getModel()) == true) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public void removeCuptor(int poz) {
+        cuptoare.remove(poz);
+    }
+
+    public Cuptor ceaMaiScumpCuptor() {
+        int max =-1;
+        Cuptor cuptorMax =this.cuptoare.get(0);
+        for(int i = 0; i < cuptoare.size();i++) {
+            if (cuptoare.get(i).getPret() > max) {
+                max = cuptoare.get(i).getPret();
+                cuptorMax = cuptoare.get(i);
+            }
+        }
+        return cuptorMax;
+    }
+
+    public Cuptor ceaMaiIeftinCuptor() {
+        int min = 99999999;
+        Cuptor cuptorMin =this.cuptoare.get(0);
+        for(int i = 0; i < cuptoare.size();i++) {
+            if (cuptoare.get(i).getPret() < min) {
+                min = cuptoare.get(i).getPret();
+                cuptorMin = cuptoare.get(i);
+            }
+        }
+        return cuptorMin;
+    }
 }
+

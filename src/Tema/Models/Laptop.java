@@ -21,6 +21,11 @@ public class Laptop {
         this.spatiuStocare = spatiuStocare;
     }
 
+    public Laptop(String model, String brand) {
+        this.model = model;
+        this.brand = brand;
+    }
+
 
 
     public void setModel(String model) {

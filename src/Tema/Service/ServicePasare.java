@@ -1,5 +1,6 @@
 package Tema.Service;
 
+import Tema.Models.Bicicleta;
 import Tema.Models.Pasare;
 
 import java.util.ArrayList;
@@ -31,5 +32,45 @@ public class ServicePasare {
         for (int i =0; i < pasari.size(); i++) {
             System.out.println(pasari.get(i).descriere());
         }
+    }
+
+    public void addPasare(Pasare pasare){
+        this.pasari.add(pasare);
+    }
+
+    public int pozitiePasare(Pasare pasare) {
+        for (int i =0; i < pasari.size(); i++) {
+            if (pasari.get(i).getSpecie().equals(pasare.getSpecie()) == true && pasari.get(i).getVarsta() == pasare.getVarsta()) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public void removePasare(int poz) {
+        pasari.remove(poz);
+    }
+
+    public Pasare aripiMaxPasare() {
+        int max =-1;
+        Pasare pasareMax =this.pasari.get(0);
+        for(int i = 0; i < pasari.size();i++) {
+            if (pasari.get(i).getMarimeAripi() > max) {
+                max = pasari.get(i).getMarimeAripi();
+                pasareMax = pasari.get(i);
+            }
+        }
+        return pasareMax;
+    }
+
+    public Pasare aripiMinPasare() {
+        int min = 99999999;
+        Pasare pasareMin =this.pasari.get(0);
+        for(int i = 0; i < pasari.size();i++) {
+            if (pasari.get(i).getMarimeAripi() < min) {
+                min = pasari.get(i).getMarimeAripi();
+                pasareMin = pasari.get(i);
+            }
+        }
+        return pasareMin;
     }
 }

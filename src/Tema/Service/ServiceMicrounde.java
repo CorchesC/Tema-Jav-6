@@ -2,6 +2,7 @@ package Tema.Service;
 
 
 import Tema.Models.Microunde;
+import Tema.Models.Motocicleta;
 
 
 import java.util.ArrayList;
@@ -28,5 +29,45 @@ public class ServiceMicrounde {
         for (int i =0; i < CuptoareMicrounde.size(); i++) {
             System.out.println(CuptoareMicrounde.get(i).descriere());
         }
+    }
+
+    public void  addMicrounde(Microunde microunde){
+        this.CuptoareMicrounde.add(microunde);
+    }
+
+    public int pozitieMicrounde(Microunde microunde) {
+        for (int i =0; i < CuptoareMicrounde.size(); i++) {
+            if (CuptoareMicrounde.get(i).getBrand().equals(microunde.getBrand()) == true && CuptoareMicrounde.get(i).getModel().equals(microunde.getModel()) == true) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public void removeMicrounde(int poz) {
+        CuptoareMicrounde.remove(poz);
+    }
+
+    public Microunde ceaMaiScumpMicrounde() {
+        int max =-1;
+        Microunde undeMax =this.CuptoareMicrounde.get(0);
+        for(int i = 0; i < CuptoareMicrounde.size();i++) {
+            if (CuptoareMicrounde.get(i).getPret() > max) {
+                max = CuptoareMicrounde.get(i).getPret();
+                undeMax = CuptoareMicrounde.get(i);
+            }
+        }
+        return undeMax;
+    }
+
+    public Microunde ceaMaiIeftinMicrounde() {
+        int min = 99999999;
+        Microunde undeMin =this.CuptoareMicrounde.get(0);
+        for(int i = 0; i < CuptoareMicrounde.size();i++) {
+            if (CuptoareMicrounde.get(i).getPret() < min) {
+                min = CuptoareMicrounde.get(i).getPret();
+                undeMin = CuptoareMicrounde.get(i);
+            }
+        }
+        return undeMin;
     }
 }

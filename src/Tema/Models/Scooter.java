@@ -19,6 +19,11 @@ public class Scooter {
         this.pret = pret;
     }
 
+    public Scooter(String model, String brand) {
+        this.model = model;
+        this.brand = brand;
+    }
+
 
 
     public void setModel(String model) {

@@ -19,6 +19,11 @@ public class Motocicleta {
         this.pret = pret;
     }
 
+    public Motocicleta(String model, String brand) {
+        this.model = model;
+        this.brand = brand;
+    }
+
 
 
     public void setModel(String model) {

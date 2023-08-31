@@ -20,6 +20,10 @@ public class Microunde {
 
     }
 
+    public Microunde(String model, String brand) {
+        this.model = model;
+        this.brand = brand;
+    }
 
 
     public void setModel(String model) {
@@ -65,4 +69,6 @@ public class Microunde {
         text+= "Tip: " +this.tip+ "\n";
         return text;
     }
+
+
 }

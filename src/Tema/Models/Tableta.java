@@ -20,6 +20,10 @@ public class Tableta {
         this.spatiuStocare = spatiuStocare;
     }
 
+    public Tableta(String model, String brand) {
+        this.model = model;
+        this.brand = brand;
+    }
 
 
     public void setModel(String model) {
